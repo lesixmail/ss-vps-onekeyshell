@@ -1,11 +1,11 @@
 #!/bin/bash
-# 一键关闭CentOS 7防火墙的脚本
 
-# 停止firewalld服务
-sudo systemctl stop firewalld
+# 关闭防火墙
+systemctl stop firewalld
+systemctl disable firewalld
 
-# 禁用firewalld服务，以防止在系统启动时自动启动
-sudo systemctl disable firewalld
-
-# 检查firewalld服务状态
-sudo systemctl status firewalld
+# 添加DNS 8.8.8.8
+echo "nameserver 1.1.1.1" >> /etc/resolv.conf
+echo "nameserver 114.114.114.114" >> /etc/resolv.conf
+echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+echo "nameserver 223.5.5.5" >> /etc/resolv.conf
