@@ -16,11 +16,12 @@ echo "nameserver 223.5.5.5" | sudo tee -a /etc/resolv.conf > /dev/null
 # 安装后端
 wget -N https://raw.githubusercontent.com/XrayR-project/XrayR-release/master/install.sh && bash install.sh
 
-wget --no-check-certificate -O bbr.sh https://github.com/teddysun/across/raw/master/bbr.sh && \
-chmod +x bbr.sh && \
-echo 3 | sudo ./bbr.sh
+# 安装nginx
+yum install -y nginx && yum install nginx-mod-stream -y
 
-# bbrplus以及内核
-wget --no-check-certificate -O bbrplus_auto.sh https://github.com/cx9208/Linux-NetSpeed/raw/master/tcp.sh && chmod +x bbrplus_auto.sh && echo 1 | sudo ./bbrplus_auto.sh
-sudo reboot
-lsmod | grep bbr
+# 申请证书
+wget -N --no-check-certificate https://raw.githubusercontents.com/qwetrz007sh/acme-1key/master/acme1key.sh && bash acme1key.sh && \echo 4
+
+# 安装bbr
+bash <(curl -Lso- https://git.io/kernel.sh) && \echo 1
+
