@@ -11,7 +11,7 @@ echo "nameserver 8.8.8.8" | sudo tee -a /etc/resolv.conf > /dev/null
 echo "nameserver 223.5.5.5" | sudo tee -a /etc/resolv.conf > /dev/null
 
 # 更新各种包
-sudo yum update -y
+# sudo yum update -y
 
 # 安装screen
 yum install screen -y
