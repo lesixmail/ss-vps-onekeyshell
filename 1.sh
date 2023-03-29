@@ -16,11 +16,6 @@ echo "nameserver 223.5.5.5" | sudo tee -a /etc/resolv.conf > /dev/null
 # 安装后端
 wget -N https://raw.githubusercontent.com/XrayR-project/XrayR-release/master/install.sh && bash install.sh
 
-# 安装nginx
-yum install -y nginx && yum install nginx-mod-stream -y
-
-# 申请证书
-wget -N --no-check-certificate https://raw.githubusercontents.com/qwetrz007sh/acme-1key/master/acme1key.sh && bash acme1key.sh && \echo 4
 
 # 安装bbr
 bash <(curl -Lso- https://git.io/kernel.sh) && \echo 1
