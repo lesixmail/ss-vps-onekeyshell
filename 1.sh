@@ -18,5 +18,5 @@ wget -N https://raw.githubusercontent.com/XrayR-project/XrayR-release/master/ins
 
 
 # 安装bbr
-bash <(curl -Lso- https://git.io/kernel.sh) && \echo 1
+bash <(curl -Lso- https://git.io/kernel.sh) 
 
