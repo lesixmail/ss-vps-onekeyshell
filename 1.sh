@@ -19,8 +19,10 @@ yum install screen -y
 # 安装后端
 wget -N https://raw.githubusercontent.com/XrayR-project/XrayR-release/master/install.sh && bash install.sh
 
-# 安装bbr
-echo -e "1\n61" | bash <(curl -Lso- https://git.io/kernel.sh)
+# 安装bbr内核
+echo -e "1\n61" | bash <(curl -Lso- https://git.io/kernel.sh) -y
 
+# 安装bbrplus
+echo -e "3" | bash <(curl -Lso- https://git.io/kernel.sh) -y
 
 
